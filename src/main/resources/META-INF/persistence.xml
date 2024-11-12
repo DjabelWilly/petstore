@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+                                 https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd"
+             version="3.1">
+    <persistence-unit name="traitement">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!-- Déclaration des classes persistées -->
+        <class>fr.digi.petstore.entites.Animal</class>
+        <class>fr.digi.petstore.entites.Fish</class>
+        <class>fr.digi.petstore.entites.Cat</class>
+        <class>fr.digi.petstore.entites.PetStore</class>
+        <class>fr.digi.petstore.entites.Product</class>
+        <class>fr.digi.petstore.entites.Address</class>
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/petstore"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="Root2024$"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="update"/>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+
+            <!-- Affichage des requêtes SQL -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+
+            <!-- Autres options Hibernate -->
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <property name="hibernate.generate_statistics" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
